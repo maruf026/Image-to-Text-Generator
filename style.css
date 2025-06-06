@@ -1,0 +1,85 @@
+/* Reset & base setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  padding: 2rem;
+}
+
+/* Container styles */
+div {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* File input style */
+input[type="file"] {
+  background-color: #1e1e2f;
+  color: #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Button style */
+button {
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 114, 255, 0.3);
+}
+
+button:hover {
+  background: linear-gradient(135deg, #0072ff, #00c6ff);
+  transform: scale(1.05);
+}
+
+/* Output style */
+#textOutput {
+  margin-top: 2rem;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  white-space: pre-wrap;
+  line-height: 1.5;
+  color: #cfcfcf;
+  overflow-y: auto;
+  max-height: 300px;
+}
+
+/* Scrollbar style */
+#textOutput::-webkit-scrollbar {
+  width: 6px;
+}
+#textOutput::-webkit-scrollbar-thumb {
+  background-color: #0072ff;
+  border-radius: 10px;
+}
