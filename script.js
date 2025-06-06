@@ -1,8 +1,9 @@
 let input = document.getElementById("input");
 let btn = document.getElementById("btn");
 let output = document.getElementById("textOutput");
+let languageSelect = document.getElementById("languageSelect");
 
-btn.addEventListener("click", () => {
+function recognizeText(langCode) {
   let imageFile = input.files[0];
 
   if (!imageFile) {
@@ -12,7 +13,7 @@ btn.addEventListener("click", () => {
 
   output.innerHTML = "Processing...";
 
-  Tesseract.recognize(imageFile, "eng", {
+  Tesseract.recognize(imageFile, langCode, {
     logger: (m) => {
       output.innerHTML = `Progress: ${Math.round(m.progress * 100)}%`;
     },
@@ -23,4 +24,9 @@ btn.addEventListener("click", () => {
     .catch((error) => {
       output.innerHTML = `Error: ${error.message}`;
     });
+}
+
+btn.addEventListener("click", () => {
+  let selectedLanguage = languageSelect.value; // "ben" or "eng"
+  recognizeText(selectedLanguage);
 });
